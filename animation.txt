@@ -1,0 +1,46 @@
+  
+      // make a div have class moving at top of the section 
+      <section class="upperBanner">
+      <div class="moving" >
+        <div class="left-shadow">
+          
+        </div>
+      </div>
+      </section>
+
+// use this jQuery 
+const $moving = $(this).find(".moving");
+    const $parent = $moving.parent(); 
+		$($parent).on("mousemove", function(ev) {
+        const positionX = (window.innerWidth / -90 - ev.clientX) / -50 * 2;
+        const positionY = -ev.clientY / 12;
+        $moving.css("transform", `translate(${positionX}px, ${positionY}px)`);
+      });
+      
+      
+    // end 
+
+
+
+// animate a background image css 
+section.inner-banner {
+    background-repeat-x: no-repeat;
+    background-size:contain;
+    background-position:  right;
+    animation: scroll 10s linear infinite;
+ overflow:hidden;
+}
+
+
+@keyframes scroll {
+  0% {
+    background-position : 100% 100%
+  }
+
+  100% {
+    background-position : 100% -500px
+  }
+}
+
+
+// end 
